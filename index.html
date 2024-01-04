@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="./style.css">
+    <title>Image slider</title>
+</head>
+<body>
+    <section  class="container">
+        <div class="gallery">
+            <span class="left"><i class="fa-solid fa-caret-left"></i></span>
+            <img src="./images/clouds-8459053_1280.jpg" alt="" width="300" height="350">
+            <img src="./images/mountain-8433234_1280.jpg" alt="" width="300" height="350">
+            <img src="./images/road-220058_1280.jpg" alt="" width="300" height="350">
+            <img src="./images/clouds-8459053_1280.jpg" alt="" width="300" height="350">
+            <img src="./images/mountain-8433234_1280.jpg" alt="" width="300" height="350">
+            <img src="./images/road-220058_1280.jpg" alt="" width="300" height="350">
+            <span class="right"><i class="fa-solid fa-caret-right"></i></span>
+        </div>
+    </section>
+    <script>
+        let leftBtn = document.querySelector('.left');
+        let rightBtn = document.querySelector('.right');
+        let gallery = document.querySelector('.gallery');
+        gallery.addEventListener('wheel',(e)=>{
+            e.preventDefault()
+         gallery.scrollLeft += e.deltaY*10
+        });
+        rightBtn.addEventListener('click',()=>{
+            gallery.scrollLeft += 300;
+        })
+        leftBtn.addEventListener('click',(e)=>{
+            e.preventDefault()
+            if(gallery.scrollLeft > 0){
+                gallery.scrollLeft -= 300;
+            }
+          
+        })
+        
+        
+    </script>
+</body>
+</html>
